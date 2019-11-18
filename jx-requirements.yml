@@ -5,10 +5,10 @@ bootConfigURL: https://github.com/hibobio/environment-hibob-stage-dev-new-dev
 cluster:
   clusterName: ""
   environmentGitOwner: ""
+  environmentGitPublic: false
   project: ""
   provider: gke
   zone: ""
-  environmentGitPublic: false
 gitops: true
 environments:
 - ingress:
