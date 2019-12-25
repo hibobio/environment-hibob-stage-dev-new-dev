@@ -27,29 +27,8 @@ environments:
     domain: staging.hibob.com
     externalDNS: true
     namespaceSubDomain: staging
-    tls:
-      email: ""
-      enabled: false
-      production: false
   key: staging
-- ingress:
-    domain: tempcprod.hibob.com
-    externalDNS: true
-    namespaceSubDomain: ""
-    tls:
-      email: ""
-      enabled: false
-      production: false
-  key: production
 gitops: true
-ingress:
-  domain: 34.255.222.199.nip.io
-  externalDNS: false
-  namespaceSubDomain: -jx.
-  tls:
-    email: ""
-    enabled: false
-    production: false
 kaniko: true
 repository: bucketrepo
 secretStorage: local
