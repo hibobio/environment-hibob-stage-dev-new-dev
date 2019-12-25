@@ -3,7 +3,6 @@ autoUpdate:
   schedule: ""
 bootConfigURL: https://github.com/hibobio/environment-hibob-stage-dev-new-dev
 cluster:
-  chartRepository: http://bucketrepo/bucketrepo/charts/
   clusterName: hibob-stage-dev-new
   environmentGitOwner: hibobio
   gitKind: github
@@ -27,8 +26,20 @@ environments:
     domain: staging.hibob.com
     externalDNS: true
     namespaceSubDomain: staging
+    tls:
+      email: ""
+      enabled: false
+      production: false
   key: staging
 gitops: true
+ingress:
+  domain: ""
+  externalDNS: false
+  namespaceSubDomain: -jx.
+  tls:
+    email: ""
+    enabled: false
+    production: false
 kaniko: true
 repository: bucketrepo
 secretStorage: local
