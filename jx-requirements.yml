@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 autoUpdate:
   enabled: false
   schedule: ""
 bootConfigURL: https://github.com/hibobio/environment-hibob-eks-eu-west-1-dev
 cluster:
-  clusterName: hibob-stage-dev
+  clusterName: hibob-stage-dev-new
   environmentGitOwner: hibobio
   gitKind: github
   gitName: github
@@ -61,14 +60,12 @@ environments:
 ingress:
   domain: ""
   externalDNS: false
->>>>>>> d1614c9... initial config based of hibobio/environment-hibob-eks-eu-west-1-dev with ref origin/master
   tls:
     email: ""
     enabled: false
     production: false
 kaniko: true
-<<<<<<< HEAD
-repository: nexus
+repository: bucketrepo
 secretStorage: local
 storage:
   backup:
@@ -81,8 +78,8 @@ storage:
     enabled: true
     url: s3://hibob-jenkinsx/reports
   repository:
-    enabled: false
-    url: ""
+    enabled: true
+    url: s3://hibob-jenkinsx/repository
 terraform: true
 vault: {}
 velero: {}
@@ -90,20 +87,3 @@ versionStream:
   ref: v1.0.257
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: jenkins
-=======
-secretStorage: local
-storage:
-  logs:
-    enabled: false
-    url: ""
-  reports:
-    enabled: false
-    url: ""
-  repository:
-    enabled: false
-    url: ""
-versionStream:
-  ref: "master"
-  url: https://github.com/jenkins-x/jenkins-x-versions.git
-webhook: prow
->>>>>>> d1614c9... initial config based of hibobio/environment-hibob-eks-eu-west-1-dev with ref origin/master
