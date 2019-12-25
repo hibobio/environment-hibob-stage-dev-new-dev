@@ -32,6 +32,15 @@ environments:
       enabled: false
       production: false
   key: staging
+- ingress:
+    domain: prod.hibob.com
+    externalDNS: true
+    namespaceSubDomain: prod
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
 gitops: true
 ingress:
   domain: jx.hibob.com
