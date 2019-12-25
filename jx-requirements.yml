@@ -18,18 +18,29 @@ environments:
     domain: jx.hibob.com
     externalDNS: true
     namespaceSubDomain: jx
+    tls:
+      email: ""
+      enabled: false
+      production: false
   key: dev
 - ingress:
     domain: staging.hibob.com
     externalDNS: true
     namespaceSubDomain: staging
+    tls:
+      email: ""
+      enabled: false
+      production: false
   key: staging
-- ingress:
-    domain: prod.hibob.com
-    externalDNS: true
-    namespaceSubDomain: prod
-  key: production
 gitops: true
+ingress:
+  domain: jx.hibob.com
+  externalDNS: true
+  namespaceSubDomain: -jx.
+  tls:
+    email: ""
+    enabled: false
+    production: false
 kaniko: true
 repository: bucketrepo
 secretStorage: local
