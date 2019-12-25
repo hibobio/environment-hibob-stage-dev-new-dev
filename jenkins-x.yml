@@ -9,6 +9,11 @@ pipelineConfig:
         - name: pr-checks
           options:
             containerOptions:
+<<<<<<< HEAD
+              name: ""
+              resources: {}
+=======
+>>>>>>> d1614c9... initial config based of hibobio/environment-hibob-eks-eu-west-1-dev with ref origin/master
               volumeMounts:
               - mountPath: /builder/home/.jx/localSecrets/currentCluster
                 name: local-secrets
@@ -40,10 +45,26 @@ pipelineConfig:
         environment:
         - name: DEPLOY_NAMESPACE
           value: jx
+<<<<<<< HEAD
+        - name: GIT_AUTHOR_NAME
+          value: admins@hibob.com
+        - name: GIT_COMMITTER_NAME
+          value: admins@hibob.com
+        - name: GIT_AUTHOR_EMAIL
+          value: admins@hibob.com
+        - name: GIT_COMMITTER_EMAIL
+          value: admins@hibob.com
+=======
+>>>>>>> d1614c9... initial config based of hibobio/environment-hibob-eks-eu-west-1-dev with ref origin/master
         stages:
         - name: release
           options:
             containerOptions:
+<<<<<<< HEAD
+              name: ""
+              resources: {}
+=======
+>>>>>>> d1614c9... initial config based of hibobio/environment-hibob-eks-eu-west-1-dev with ref origin/master
               volumeMounts:
               - mountPath: /builder/home/.jx/localSecrets/currentCluster
                 name: local-secrets
