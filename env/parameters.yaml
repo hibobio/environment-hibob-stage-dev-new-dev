@@ -1,0 +1,10 @@
+adminUser:
+  password: local:hibob-stage-dev-new/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: admins@hibob.com
+  token: local:hibob-stage-dev-new/pipelineUser:token
+  username: admins@hibob.com
+prow:
+  hmacToken: local:hibob-stage-dev-new/prow:hmacToken

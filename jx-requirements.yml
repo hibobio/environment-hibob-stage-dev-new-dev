@@ -1,17 +1,23 @@
 autoUpdate:
   enabled: false
   schedule: ""
+bootConfigURL: https://github.com/hibobio/environment-hibob-stage-dev-new-dev
 cluster:
+  chartRepository: http://bucketrepo/bucketrepo/charts/
+  clusterName: hibob-stage-dev-new
+  environmentGitOwner: hibobio
   gitKind: github
   gitName: github
   gitServer: https://github.com
   namespace: jx
   provider: eks
+  region: eu-west-1
+  registry: 242867168342.dkr.ecr.eu-west-1.amazonaws.com
 environments:
 - ingress:
-    domain: jx.hibob.com
-    externalDNS: true
-    namespaceSubDomain: ""
+    domain: 34.255.222.199.nip.io
+    externalDNS: false
+    namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
@@ -37,7 +43,7 @@ environments:
   key: production
 gitops: true
 ingress:
-  domain: ""
+  domain: 34.255.222.199.nip.io
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
