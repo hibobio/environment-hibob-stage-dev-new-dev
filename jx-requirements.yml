@@ -15,9 +15,9 @@ cluster:
   registry: 242867168342.dkr.ecr.eu-west-1.amazonaws.com
 environments:
 - ingress:
-    domain: jx.hibob.com
-    externalDNS: true
-    namespaceSubDomain: jx
+    domain: 34.241.168.123.nip.io
+    externalDNS: false
+    namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
@@ -25,7 +25,7 @@ environments:
   key: dev
 gitops: true
 ingress:
-  domain: ""
+  domain: 34.241.168.123.nip.io
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
