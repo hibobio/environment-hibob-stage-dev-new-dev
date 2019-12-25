@@ -1,7 +1,6 @@
 autoUpdate:
   enabled: false
   schedule: ""
-bootConfigURL: https://github.com/hibobio/environment-hibob-eks-eu-west-1-dev
 cluster:
   gitKind: github
   gitName: github
