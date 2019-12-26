@@ -1,0 +1,28 @@
+apiVersion: jenkins.io/v1
+kind: Environment
+metadata:
+  creationTimestamp: "2019-11-26T17:26:23Z"
+  generation: 4
+  name: production
+  namespace: jx
+  resourceVersion: "21544799"
+  selfLink: /apis/jenkins.io/v1/namespaces/jx/environments/production
+  uid: de78c155-1071-11ea-a89a-06a2e1be5c58
+spec:
+  cluster: https://62B635BB42C88F9E9B3D67FD71CA5C0D.yl4.eu-west-1.eks.amazonaws.com
+  kind: Permanent
+  label: Production
+  namespace: production
+  order: 100
+  previewGitInfo:
+    user: {}
+  promotionStrategy: Manual
+  remoteCluster: true
+  source:
+    ref: master
+    url: https://github.com/hibobio/environment-hibob-production.git
+  teamSettings:
+    defaultScheduler:
+      kind: ""
+      name: ""
+status: {}
