@@ -16,7 +16,7 @@ cluster:
 environments:
 - ingress:
     domain: jx.hibob.com
-    externalDNS: true
+    externalDNS: false
     namespaceSubDomain: -jx.
     tls:
       email: ""
@@ -26,7 +26,7 @@ environments:
 gitops: true
 ingress:
   domain: jx.hibob.com
-  externalDNS: true
+  externalDNS: false
   namespaceSubDomain: -jx.
   tls:
     email: ""
