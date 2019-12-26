@@ -1,8 +1,10 @@
 external-dns:
   enabled: {{ .Requirements.ingress.externalDNS }}
+  image:
+    tag: 0.5.16-debian-9-r8
   sources:
   - ingress
-  provider: awsc
+  provider: aws
   aws:
     region: eu-west-1
     assumeRoleArn: arn:aws:iam::242867168342:role/k8s-external-dns
@@ -10,5 +12,6 @@ external-dns:
     txtPrefix: "a-"
   rbac:
     create: true
+    serviceAccountName: external-dns
   domainFilters:
   - "{{ .Requirements.ingress.domain }}"
