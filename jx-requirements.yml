@@ -17,7 +17,7 @@ environments:
 - ingress:
     domain: hibob.com
     externalDNS: true
-    namespaceSubDomain: -jx.
+    namespaceSubDomain: ""
     tls:
       email: ""
       enabled: false
