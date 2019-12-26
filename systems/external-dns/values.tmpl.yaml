@@ -9,9 +9,11 @@ external-dns:
     region: eu-west-1
     assumeRoleArn: arn:aws:iam::242867168342:role/k8s-external-dns
     preferCNAME: true
-    txtPrefix: "a-"
+  txtPrefix: "a-"
   rbac:
     create: true
     serviceAccountName: external-dns
+    serviceAccountAnnotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::242867168342:role/k8s-external-dns
   domainFilters:
   - "{{ .Requirements.ingress.domain }}"
