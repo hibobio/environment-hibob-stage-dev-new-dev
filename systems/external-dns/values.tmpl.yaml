@@ -2,7 +2,12 @@ external-dns:
   enabled: {{ .Requirements.ingress.externalDNS }}
   sources:
   - ingress
-  provider: eks
+  provider: awsc
+  aws:
+    region: eu-west-1
+    assumeRoleArn: arn:aws:iam::242867168342:role/k8s-external-dns
+    preferCNAME: true
+    txtPrefix: "a-"
   rbac:
     create: true
   domainFilters:
