@@ -3,6 +3,7 @@ kind: Environment
 metadata:
   name: prod
   namespace: jx
+  resourceVersion: "483150"
 spec:
   cluster: https://62B635BB42C88F9E9B3D67FD71CA5C0D.yl4.eu-west-1.eks.amazonaws.com
   kind: Permanent

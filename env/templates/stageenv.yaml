@@ -3,6 +3,7 @@ kind: Environment
 metadata:
   name: stage
   namespace: jx
+  resourceVersion: "483150"
 spec:
   kind: Permanent
   label: Stage

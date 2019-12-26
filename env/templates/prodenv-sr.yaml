@@ -3,6 +3,7 @@ kind: SourceRepository
 metadata:
   annotations:
     jenkins.io/chart: env
+    resourceVersion: "483150"
   labels:
     jenkins.io/chart-release: jenkins-x
     jenkins.io/gitSync: "false"
