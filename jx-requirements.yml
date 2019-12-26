@@ -24,14 +24,6 @@ environments:
       production: false
   key: dev
 gitops: true
-ingress:
-  domain: 34.241.168.123.nip.io
-  externalDNS: false
-  namespaceSubDomain: -jx.
-  tls:
-    email: ""
-    enabled: false
-    production: false
 kaniko: true
 repository: bucketrepo
 secretStorage: local
