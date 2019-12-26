@@ -3,7 +3,7 @@ kind: Environment
 metadata:
   creationTimestamp: "2019-11-26T17:26:23Z"
   generation: 4
-  name: production
+  name: prod
   namespace: jx
   resourceVersion: "21544799"
   selfLink: /apis/jenkins.io/v1/namespaces/jx/environments/production
@@ -11,8 +11,8 @@ metadata:
 spec:
   cluster: https://62B635BB42C88F9E9B3D67FD71CA5C0D.yl4.eu-west-1.eks.amazonaws.com
   kind: Permanent
-  label: Production
-  namespace: production
+  label: Prod
+  namespace: prod
   order: 100
   previewGitInfo:
     user: {}
