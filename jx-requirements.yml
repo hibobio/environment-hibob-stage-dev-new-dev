@@ -15,7 +15,7 @@ cluster:
   registry: 242867168342.dkr.ecr.eu-west-1.amazonaws.com
 environments:
 - ingress:
-    domain: jx.hibob.com
+    domain: hibob.com
     externalDNS: false
     namespaceSubDomain: -jx.
     tls:
@@ -23,6 +23,24 @@ environments:
       enabled: false
       production: false
   key: dev
+- ingress:
+    domain: hibob.com
+    externalDNS: false
+    namespaceSubDomain: -stage
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: stage
+- ingress:
+    domain: hibob.com
+    externalDNS: false
+    namespaceSubDomain: -prod
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: prod
 gitops: true
 ingress:
   domain: jx.hibob.com
