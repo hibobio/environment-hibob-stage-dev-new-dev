@@ -15,8 +15,8 @@ cluster:
   registry: 242867168342.dkr.ecr.eu-west-1.amazonaws.com
 environments:
 - ingress:
-    domain: 34.241.168.123.nip.io
-    externalDNS: false
+    domain: jx.hibob.com
+    externalDNS: true
     namespaceSubDomain: -jx.
     tls:
       email: ""
@@ -24,6 +24,14 @@ environments:
       production: false
   key: dev
 gitops: true
+ingress:
+  domain: jx.hibob.com
+  externalDNS: true
+  namespaceSubDomain: -jx.
+  tls:
+    email: ""
+    enabled: false
+    production: false
 kaniko: true
 repository: bucketrepo
 secretStorage: local
