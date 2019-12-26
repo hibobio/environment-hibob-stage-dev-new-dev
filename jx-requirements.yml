@@ -23,24 +23,6 @@ environments:
       enabled: false
       production: false
   key: dev
-- ingress:
-    domain: hibob.com
-    externalDNS: false
-    namespaceSubDomain: -stage
-    tls:
-      email: ""
-      enabled: false
-      production: false
-  key: stage
-- ingress:
-    domain: hibob.com
-    externalDNS: false
-    namespaceSubDomain: -prod
-    tls:
-      email: ""
-      enabled: false
-      production: false
-  key: prod
 gitops: true
 ingress:
   domain: hibob.com
