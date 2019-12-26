@@ -10,9 +10,6 @@ metadata:
     jenkins.io/version: "1"
   name: hibobio-environment-hibob-production
   namespace: jx
-  resourceVersion: "315294"
-  selfLink: /apis/jenkins.io/v1/namespaces/jx/sourcerepositories/hibobio-environment-hibob-stage-dev-new-production
-  uid: cdce350c-270c-11ea-8e32-0ab1c1650df6
 spec:
   description: the git repository for the Production environment
   httpCloneURL: https://github.com/hibobio/environment-hibob-production.git

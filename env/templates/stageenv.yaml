@@ -1,13 +1,8 @@
 apiVersion: jenkins.io/v1
 kind: Environment
 metadata:
-  creationTimestamp: "2019-11-26T17:26:07Z"
-  generation: 2
   name: stage
   namespace: jx
-  resourceVersion: "20397302"
-  selfLink: /apis/jenkins.io/v1/namespaces/jx/environments/staging
-  uid: d4ec4827-1071-11ea-a89a-06a2e1be5c58
 spec:
   kind: Permanent
   label: Stage
@@ -23,4 +18,3 @@ spec:
     defaultScheduler:
       kind: ""
       name: ""
-status: {}
