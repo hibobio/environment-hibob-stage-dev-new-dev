@@ -23,16 +23,24 @@ environments:
       enabled: false
       production: false
   key: dev
-- key: prod
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: prod
+gitops: true
 ingress:
   domain: hibob.com
   externalDNS: true
-  namespaceSubDomain: ""
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
     production: false
-gitops: true
 kaniko: true
 repository: nexus
 secretStorage: local

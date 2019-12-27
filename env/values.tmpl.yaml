@@ -6,6 +6,3 @@ tekton:
 {{- else }}
   enabled: false
 {{- end }}
-expose:
-  config:
-    urltemplate: "{{.Service}}-{{.Namespace}}.{{.Domain}}"
