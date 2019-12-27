@@ -42,7 +42,7 @@ ingress:
     enabled: false
     production: false
 kaniko: true
-repository: bucketrepo
+repository: nexus
 secretStorage: local
 storage:
   backup:
