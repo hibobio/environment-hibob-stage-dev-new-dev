@@ -7,9 +7,13 @@ nginx-ingress:
       omitClusterIP: true
       annotations:
         service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:eu-west-1:242867168342:certificate/7731015f-3053-4f30-829f-40c542243d1f
-        service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+        service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "http"
+        service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "https"
       targetPorts:
         https: http
+        http: http
+    config:
+      use-forwarded-headers: "true"
   defaultBackend:
     service:
       omitClusterIP: true
