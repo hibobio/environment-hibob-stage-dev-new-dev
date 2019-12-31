@@ -40,6 +40,15 @@ jenkins:
     Image: "242867168342.dkr.ecr.eu-west-1.amazonaws.com/jx-master"
     ImageTag: "latest"
     AdminPassword: "{{ .Parameters.adminUser.password }}"
+  Persistence:
+    mounts:
+      - name: jenkins-security-secrets
+        mountPath: /etc/jenkins-secrets
+        readOnly: true
+    volumes:
+      - name: jenkins-security-secrets
+        secret:
+          secretName: jenkins-security-secrets
   Agent:
     KubernetesServerURL: "https://kubernetes.default:443"
     PodTemplates:
