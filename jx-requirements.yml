@@ -3,13 +3,11 @@ autoUpdate:
   schedule: ""
 bootConfigURL: https://github.com/hibobio/environment-hibob-stage-dev-new-dev
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: false
-  project: ""
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
   provider: gke
-  zone: ""
-gitops: true
 environments:
 - ingress:
     domain: hibob.com
@@ -58,6 +56,6 @@ terraform: true
 vault: {}
 velero: {}
 versionStream:
-  ref: v1.0.257
+  ref: 34bfde0d049d8db92e0479b274641bea8d65d2bf
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: jenkins
