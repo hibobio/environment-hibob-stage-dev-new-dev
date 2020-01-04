@@ -1,0 +1,24 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: hibob-cluster-developers
+rules:
+- apiGroups: [""]
+  resources: ["services", "endpoints", "pods", "pods/log", "ingress"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["extensions", "apps"]
+  resources: ["deployments"]
+  verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: hibob-cluster-developers
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: hibob-cluster-developers
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: hibob-cluster-developers

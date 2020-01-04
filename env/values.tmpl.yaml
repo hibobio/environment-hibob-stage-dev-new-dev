@@ -6,8 +6,3 @@ tekton:
 {{- else }}
   enabled: false
 {{- end }}
-jenkins:
-  Servers:
-    Global:
-      EnvVars:
-        DOCKER_REGISTRY: "242867168342.dkr.ecr.eu-west-1.amazonaws.com"
