@@ -60,6 +60,6 @@ terraform: true
 vault: {}
 velero: {}
 versionStream:
-  ref: 34bfde0d049d8db92e0479b274641bea8d65d2bf
+  ref: 4f8fab369110fb9796ea5ec6e3ced44714cb344f
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: jenkins
