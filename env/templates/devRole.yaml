@@ -4,7 +4,7 @@ metadata:
   name: hibob-cluster-developers
 rules:
 - apiGroups: [""]
-  resources: ["services", "endpoints", "pods", "pods/log", "ingress"]
+  resources: ["services", "endpoints", "pods", "pods/log", "ingress","namespaces"]
   verbs: ["get", "list", "watch"]
 - apiGroups: ["extensions", "apps"]
   resources: ["deployments"]
