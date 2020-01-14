@@ -4,6 +4,8 @@ nginx-ingress:
     extraArgs:
       publish-service: kube-system/jxing-nginx-ingress-controller
     service:
+      targetPorts: 
+        https: http
       omitClusterIP: true
 {{- if eq .Requirements.cluster.provider "eks" }}
       annotations:
