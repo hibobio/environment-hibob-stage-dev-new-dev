@@ -422,6 +422,525 @@ jenkins:
             Command: "/bin/sh -c"
             Args: "cat"
             Tty: true
+      Docs:
+        Name: hibob-docs-scala
+        Label: jenkins-hibob-docs-scala
+        annotations:
+          iam.amazonaws.com/role: ecr-full
+        NodeSelector:
+          kubernetes.io/lifecycle: spot
+        DevPodPorts: 5005, 8080
+        volumes:
+        - type: Secret
+          secretName: jenkins-maven-settings
+          mountPath: /root/.m2/
+        - type: Secret
+          secretName: jenkins-docker-cfg
+          mountPath: /home/jenkins/.docker
+        - type: Secret
+          secretName: jenkins-release-gpg
+          mountPath: /home/jenkins/.gnupg
+        - type: HostPath
+          hostPath: /root/docs/.sbt
+          mountPath: /root/.sbt
+        - type: HostPath
+          hostPath: /root/docs/.ivy2
+          mountPath: /root/.ivy2
+        EnvVars:
+          JENKINS_URL: http://jenkins:8080
+          # _JAVA_OPTIONS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms500M -Xmx5G'
+          GIT_COMMITTER_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_NAME: jenkins-x-bot
+          GIT_COMMITTER_NAME: jenkins-x-bot
+          XDG_CONFIG_HOME: /home/jenkins
+          DOCKER_CONFIG: /home/jenkins/.docker/
+          POSTGRES_PASSWORD: test
+          POSTGRES_USER: postgres
+          POSTGRES_DB: test
+        ServiceAccount: jenkins
+        Containers:
+          Jnlp:
+            Image: jenkinsci/jnlp-slave:3.26-1-alpine
+            RequestCpu: "100m"
+            RequestMemory: "128Mi"
+            Args: '${computer.jnlpmac} ${computer.name}'
+          Scala:
+            Image: gcr.io/jenkinsxio/builder-scala:latest
+            Privileged: true
+            RequestCpu: "1"
+            RequestMemory: "2Gi"
+            LimitCpu: "3500m"
+            LimitMemory: "4Gi"
+            # You may want to change this to true while testing a new image
+            # AlwaysPullImage: true
+            Command: "/bin/sh -c"
+            Args: "cat"
+            Tty: true
+          Postgres:
+            Image: postgres:9.6-alpine
+            Privileged: true
+            RequestCpu: "400m"
+            RequestMemory: "512Mi"
+            LimitCpu: "1"
+            LimitMemory: "1024Mi"
+            Tty: true
+      Mapping:
+        Name: hibob-mapping-scala
+        Label: jenkins-hibob-mapping-scala
+        annotations:
+          iam.amazonaws.com/role: ecr-full
+        NodeSelector:
+          kubernetes.io/lifecycle: spot
+        DevPodPorts: 5005, 8080
+        volumes:
+        - type: Secret
+          secretName: jenkins-maven-settings
+          mountPath: /root/.m2/
+        - type: Secret
+          secretName: jenkins-docker-cfg
+          mountPath: /home/jenkins/.docker
+        - type: Secret
+          secretName: jenkins-release-gpg
+          mountPath: /home/jenkins/.gnupg
+        - type: HostPath
+          hostPath: /root/mapping/.sbt
+          mountPath: /root/.sbt
+        - type: HostPath
+          hostPath: /root/mapping/.ivy2
+          mountPath: /root/.ivy2
+        EnvVars:
+          JENKINS_URL: http://jenkins:8080
+          # _JAVA_OPTIONS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms500M -Xmx5G'
+          GIT_COMMITTER_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_NAME: jenkins-x-bot
+          GIT_COMMITTER_NAME: jenkins-x-bot
+          XDG_CONFIG_HOME: /home/jenkins
+          DOCKER_CONFIG: /home/jenkins/.docker/
+          POSTGRES_PASSWORD: test
+          POSTGRES_USER: postgres
+          POSTGRES_DB: test
+        ServiceAccount: jenkins
+        Containers:
+          Jnlp:
+            Image: jenkinsci/jnlp-slave:3.26-1-alpine
+            RequestCpu: "100m"
+            RequestMemory: "128Mi"
+            Args: '${computer.jnlpmac} ${computer.name}'
+          Scala:
+            Image: gcr.io/jenkinsxio/builder-scala:latest
+            Privileged: true
+            RequestCpu: "1"
+            RequestMemory: "2Gi"
+            LimitCpu: "3500m"
+            LimitMemory: "4Gi"
+            # You may want to change this to true while testing a new image
+            # AlwaysPullImage: true
+            Command: "/bin/sh -c"
+            Args: "cat"
+            Tty: true
+          Postgres:
+            Image: postgres:9.6-alpine
+            Privileged: true
+            RequestCpu: "400m"
+            RequestMemory: "512Mi"
+            LimitCpu: "1"
+            LimitMemory: "1024Mi"
+            Tty: true
+      Provisioning:
+        Name: hibob-provisioning-scala
+        Label: jenkins-hibob-provisioning-scala
+        annotations:
+          iam.amazonaws.com/role: ecr-full
+        NodeSelector:
+          kubernetes.io/lifecycle: spot
+        DevPodPorts: 5005, 8080
+        volumes:
+        - type: Secret
+          secretName: jenkins-maven-settings
+          mountPath: /root/.m2/
+        - type: Secret
+          secretName: jenkins-docker-cfg
+          mountPath: /home/jenkins/.docker
+        - type: Secret
+          secretName: jenkins-release-gpg
+          mountPath: /home/jenkins/.gnupg
+        - type: HostPath
+          hostPath: /root/provisioning/.sbt
+          mountPath: /root/.sbt
+        - type: HostPath
+          hostPath: /root/provisioning/.ivy2
+          mountPath: /root/.ivy2
+        EnvVars:
+          JENKINS_URL: http://jenkins:8080
+          # _JAVA_OPTIONS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms500M -Xmx5G'
+          GIT_COMMITTER_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_NAME: jenkins-x-bot
+          GIT_COMMITTER_NAME: jenkins-x-bot
+          XDG_CONFIG_HOME: /home/jenkins
+          DOCKER_CONFIG: /home/jenkins/.docker/
+          POSTGRES_PASSWORD: test
+          POSTGRES_USER: postgres
+          POSTGRES_DB: test
+        ServiceAccount: jenkins
+        Containers:
+          Jnlp:
+            Image: jenkinsci/jnlp-slave:3.26-1-alpine
+            RequestCpu: "100m"
+            RequestMemory: "128Mi"
+            Args: '${computer.jnlpmac} ${computer.name}'
+          Scala:
+            Image: gcr.io/jenkinsxio/builder-scala:latest
+            Privileged: true
+            RequestCpu: "1"
+            RequestMemory: "2Gi"
+            LimitCpu: "3500m"
+            LimitMemory: "4Gi"
+            # You may want to change this to true while testing a new image
+            # AlwaysPullImage: true
+            Command: "/bin/sh -c"
+            Args: "cat"
+            Tty: true
+          Postgres:
+            Image: postgres:9.6-alpine
+            Privileged: true
+            RequestCpu: "400m"
+            RequestMemory: "512Mi"
+            LimitCpu: "1"
+            LimitMemory: "1024Mi"
+            Tty: true
+      Slack-v2:
+        Name: hibob-slack-v2-scala
+        Label: jenkins-hibob-slack-v2-scala
+        annotations:
+          iam.amazonaws.com/role: ecr-full
+        NodeSelector:
+          kubernetes.io/lifecycle: spot
+        DevPodPorts: 5005, 8080
+        volumes:
+        - type: Secret
+          secretName: jenkins-maven-settings
+          mountPath: /root/.m2/
+        - type: Secret
+          secretName: jenkins-docker-cfg
+          mountPath: /home/jenkins/.docker
+        - type: Secret
+          secretName: jenkins-release-gpg
+          mountPath: /home/jenkins/.gnupg
+        - type: HostPath
+          hostPath: /root/slack-v2/.sbt
+          mountPath: /root/.sbt
+        - type: HostPath
+          hostPath: /root/slack-v2/.ivy2
+          mountPath: /root/.ivy2
+        EnvVars:
+          JENKINS_URL: http://jenkins:8080
+          # _JAVA_OPTIONS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms500M -Xmx5G'
+          GIT_COMMITTER_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_NAME: jenkins-x-bot
+          GIT_COMMITTER_NAME: jenkins-x-bot
+          XDG_CONFIG_HOME: /home/jenkins
+          DOCKER_CONFIG: /home/jenkins/.docker/
+          POSTGRES_PASSWORD: test
+          POSTGRES_USER: postgres
+          POSTGRES_DB: test
+        ServiceAccount: jenkins
+        Containers:
+          Jnlp:
+            Image: jenkinsci/jnlp-slave:3.26-1-alpine
+            RequestCpu: "100m"
+            RequestMemory: "128Mi"
+            Args: '${computer.jnlpmac} ${computer.name}'
+          Scala:
+            Image: gcr.io/jenkinsxio/builder-scala:latest
+            Privileged: true
+            RequestCpu: "1"
+            RequestMemory: "2Gi"
+            LimitCpu: "3500m"
+            LimitMemory: "4Gi"
+            # You may want to change this to true while testing a new image
+            # AlwaysPullImage: true
+            Command: "/bin/sh -c"
+            Args: "cat"
+            Tty: true
+          Postgres:
+            Image: postgres:9.6-alpine
+            Privileged: true
+            RequestCpu: "400m"
+            RequestMemory: "512Mi"
+            LimitCpu: "1"
+            LimitMemory: "1024Mi"
+            Tty: true
+      Zapier-integration:
+        Name: hibob-zapier-integration-scala
+        Label: jenkins-hibob-zapier-integration-scala
+        annotations:
+          iam.amazonaws.com/role: ecr-full
+        NodeSelector:
+          kubernetes.io/lifecycle: spot
+        DevPodPorts: 5005, 8080
+        volumes:
+        - type: Secret
+          secretName: jenkins-maven-settings
+          mountPath: /root/.m2/
+        - type: Secret
+          secretName: jenkins-docker-cfg
+          mountPath: /home/jenkins/.docker
+        - type: Secret
+          secretName: jenkins-release-gpg
+          mountPath: /home/jenkins/.gnupg
+        - type: HostPath
+          hostPath: /root/zapier-integration/.sbt
+          mountPath: /root/.sbt
+        - type: HostPath
+          hostPath: /root/zapier-integration/.ivy2
+          mountPath: /root/.ivy2
+        EnvVars:
+          JENKINS_URL: http://jenkins:8080
+          # _JAVA_OPTIONS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms500M -Xmx5G'
+          GIT_COMMITTER_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_NAME: jenkins-x-bot
+          GIT_COMMITTER_NAME: jenkins-x-bot
+          XDG_CONFIG_HOME: /home/jenkins
+          DOCKER_CONFIG: /home/jenkins/.docker/
+          POSTGRES_PASSWORD: test
+          POSTGRES_USER: postgres
+          POSTGRES_DB: test
+        ServiceAccount: jenkins
+        Containers:
+          Jnlp:
+            Image: jenkinsci/jnlp-slave:3.26-1-alpine
+            RequestCpu: "100m"
+            RequestMemory: "128Mi"
+            Args: '${computer.jnlpmac} ${computer.name}'
+          Scala:
+            Image: gcr.io/jenkinsxio/builder-scala:latest
+            Privileged: true
+            RequestCpu: "1"
+            RequestMemory: "2Gi"
+            LimitCpu: "3500m"
+            LimitMemory: "4Gi"
+            # You may want to change this to true while testing a new image
+            # AlwaysPullImage: true
+            Command: "/bin/sh -c"
+            Args: "cat"
+            Tty: true
+          Postgres:
+            Image: postgres:9.6-alpine
+            Privileged: true
+            RequestCpu: "400m"
+            RequestMemory: "512Mi"
+            LimitCpu: "1"
+            LimitMemory: "1024Mi"
+            Tty: true
+      Compensation:
+        Name: hibob-compensation-gradle-with-pg
+        Label: jenkins-hibob-compensation-gradle-with-pg
+        annotations:
+          iam.amazonaws.com/role: ecr-full
+        NodeSelector:
+          kubernetes.io/lifecycle: spot
+        DevPodPorts: 5005, 8080
+        volumes:
+        - type: Secret
+          secretName: jenkins-docker-cfg
+          mountPath: /home/jenkins/.docker
+        EnvVars:
+          JENKINS_URL: http://jenkins:8080
+          # _JAVA_OPTIONS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms500M -Xmx5G'
+          GIT_COMMITTER_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_NAME: jenkins-x-bot
+          GIT_COMMITTER_NAME: jenkins-x-bot
+          XDG_CONFIG_HOME: /home/jenkins
+          DOCKER_CONFIG: /home/jenkins/.docker/
+          POSTGRES_PASSWORD: test
+          POSTGRES_USER: postgres
+          POSTGRES_DB: test
+        ServiceAccount: jenkins
+        Containers:
+          Jnlp:
+            Image: jenkinsci/jnlp-slave:3.26-1-alpine
+            RequestCpu: "100m"
+            RequestMemory: "128Mi"
+            Args: '${computer.jnlpmac} ${computer.name}'
+          Postgres:
+            Image: postgres:9.6-alpine
+            #Privileged: ture
+            RequestCpu: "400m"
+            RequestMemory: "512Mi"
+            LimitCpu: "1"
+            LimitMemory: "1024Mi"
+            Tty: true
+          Gradle:
+            Image: gcr.io/jenkinsxio/builder-gradle:2.0.1022-354
+            Privileged: true
+            RequestCpu: "1"
+            RequestMemory: "1Gi"
+            LimitCpu: "2"
+            LimitMemory: "2Gi"
+            # You may want to change this to true while testing a new image
+            # AlwaysPullImage: true
+            Command: "/bin/sh -c"
+            Args: "cat"
+            Tty: true
+      Slack:
+        Name: hibob-slack-gradle-with-pg
+        Label: jenkins-hibob-slack-gradle-with-pg
+        annotations:
+          iam.amazonaws.com/role: ecr-full
+        NodeSelector:
+          kubernetes.io/lifecycle: spot
+        DevPodPorts: 5005, 8080
+        volumes:
+        - type: Secret
+          secretName: jenkins-docker-cfg
+          mountPath: /home/jenkins/.docker
+        EnvVars:
+          JENKINS_URL: http://jenkins:8080
+          # _JAVA_OPTIONS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms500M -Xmx5G'
+          GIT_COMMITTER_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_NAME: jenkins-x-bot
+          GIT_COMMITTER_NAME: jenkins-x-bot
+          XDG_CONFIG_HOME: /home/jenkins
+          DOCKER_CONFIG: /home/jenkins/.docker/
+          POSTGRES_PASSWORD: test
+          POSTGRES_USER: postgres
+          POSTGRES_DB: test
+        ServiceAccount: jenkins
+        Containers:
+          Jnlp:
+            Image: jenkinsci/jnlp-slave:3.26-1-alpine
+            RequestCpu: "100m"
+            RequestMemory: "128Mi"
+            Args: '${computer.jnlpmac} ${computer.name}'
+          Postgres:
+            Image: postgres:9.6-alpine
+            #Privileged: ture
+            RequestCpu: "400m"
+            RequestMemory: "512Mi"
+            LimitCpu: "1"
+            LimitMemory: "1024Mi"
+            Tty: true
+          Gradle:
+            Image: gcr.io/jenkinsxio/builder-gradle:2.0.1022-354
+            Privileged: true
+            RequestCpu: "1"
+            RequestMemory: "1Gi"
+            LimitCpu: "2"
+            LimitMemory: "2Gi"
+            # You may want to change this to true while testing a new image
+            # AlwaysPullImage: true
+            Command: "/bin/sh -c"
+            Args: "cat"
+            Tty: true
+      Timelog:
+        Name: hibob-timelog-gradle-with-pg
+        Label: jenkins-hibob-timelog-gradle-with-pg
+        annotations:
+          iam.amazonaws.com/role: ecr-full
+        NodeSelector:
+          kubernetes.io/lifecycle: spot
+        DevPodPorts: 5005, 8080
+        volumes:
+        - type: Secret
+          secretName: jenkins-docker-cfg
+          mountPath: /home/jenkins/.docker
+        EnvVars:
+          JENKINS_URL: http://jenkins:8080
+          # _JAVA_OPTIONS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms500M -Xmx5G'
+          GIT_COMMITTER_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_NAME: jenkins-x-bot
+          GIT_COMMITTER_NAME: jenkins-x-bot
+          XDG_CONFIG_HOME: /home/jenkins
+          DOCKER_CONFIG: /home/jenkins/.docker/
+          POSTGRES_PASSWORD: test
+          POSTGRES_USER: postgres
+          POSTGRES_DB: test
+        ServiceAccount: jenkins
+        Containers:
+          Jnlp:
+            Image: jenkinsci/jnlp-slave:3.26-1-alpine
+            RequestCpu: "100m"
+            RequestMemory: "128Mi"
+            Args: '${computer.jnlpmac} ${computer.name}'
+          Postgres:
+            Image: postgres:9.6-alpine
+            #Privileged: ture
+            RequestCpu: "400m"
+            RequestMemory: "512Mi"
+            LimitCpu: "1"
+            LimitMemory: "1024Mi"
+            Tty: true
+          Gradle:
+            Image: gcr.io/jenkinsxio/builder-gradle:2.0.1022-354
+            Privileged: true
+            RequestCpu: "1"
+            RequestMemory: "1Gi"
+            LimitCpu: "2"
+            LimitMemory: "2Gi"
+            # You may want to change this to true while testing a new image
+            # AlwaysPullImage: true
+            Command: "/bin/sh -c"
+            Args: "cat"
+            Tty: true
+      Notifications:
+        Name: hibob-notifications-gradle-with-pg
+        Label: jenkins-hibob-notifications-gradle-with-pg
+        annotations:
+          iam.amazonaws.com/role: ecr-full
+        NodeSelector:
+          kubernetes.io/lifecycle: spot
+        DevPodPorts: 5005, 8080
+        volumes:
+        - type: Secret
+          secretName: jenkins-docker-cfg
+          mountPath: /home/jenkins/.docker
+        EnvVars:
+          JENKINS_URL: http://jenkins:8080
+          # _JAVA_OPTIONS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms500M -Xmx5G'
+          GIT_COMMITTER_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_NAME: jenkins-x-bot
+          GIT_COMMITTER_NAME: jenkins-x-bot
+          XDG_CONFIG_HOME: /home/jenkins
+          DOCKER_CONFIG: /home/jenkins/.docker/
+          POSTGRES_PASSWORD: test
+          POSTGRES_USER: postgres
+          POSTGRES_DB: test
+        ServiceAccount: jenkins
+        Containers:
+          Jnlp:
+            Image: jenkinsci/jnlp-slave:3.26-1-alpine
+            RequestCpu: "100m"
+            RequestMemory: "128Mi"
+            Args: '${computer.jnlpmac} ${computer.name}'
+          Postgres:
+            Image: postgres:9.6-alpine
+            #Privileged: ture
+            RequestCpu: "400m"
+            RequestMemory: "512Mi"
+            LimitCpu: "1"
+            LimitMemory: "1024Mi"
+            Tty: true
+          Gradle:
+            Image: gcr.io/jenkinsxio/builder-gradle:2.0.1022-354
+            Privileged: true
+            RequestCpu: "1"
+            RequestMemory: "1Gi"
+            LimitCpu: "2"
+            LimitMemory: "2Gi"
+            # You may want to change this to true while testing a new image
+            # AlwaysPullImage: true
+            Command: "/bin/sh -c"
+            Args: "cat"
+            Tty: true
       Jx-master-image:
         Name: hibob-jx-master
         Label: hibob-jx-master
