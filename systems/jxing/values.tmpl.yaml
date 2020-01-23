@@ -1,5 +1,8 @@
 nginx-ingress:
   controller:
+    config:
+      redirect-to-https: true
+      use-forwarded-headers: true
     replicaCount: 3
     extraArgs:
       publish-service: kube-system/jxing-nginx-ingress-controller
@@ -10,7 +13,7 @@ nginx-ingress:
 {{- if eq .Requirements.cluster.provider "eks" }}
       annotations:
         service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
-        service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:eu-west-1:242867168342:certificate/95f7d35c-e993-47db-869c-caba9738ab49
+        service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:eu-west-1:242867168342:certificate/549faf22-0bc6-45ee-a075-b193eda45555
         service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "https"
         #service.beta.kubernetes.io/aws-load-balancer-type: nlb
 {{- end }}
