@@ -34,7 +34,18 @@ environments:
       enabled: false
       production: false
   key: staging
-  repository: environment-hibob-stage-dev-new-staging
+  repository: environment-hibob-staging
+- ingress:
+    domain: hibob.com
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+  remoteCluster: true
+  repository: environment-hibob-production
 gitops: true
 ingress:
   domain: hibob.com
@@ -66,6 +77,6 @@ velero:
   schedule: ""
   ttl: ""
 versionStream:
-  ref: 9701b53e29210a0572e582d926eedfa51a36382a
+  ref: v1.0.330
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: jenkins
