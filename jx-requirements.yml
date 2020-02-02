@@ -4,8 +4,6 @@ autoUpdate:
 bootConfigURL: https://github.com/hibobio/environment-hibob-stage-dev-new-dev
 cluster:
   clusterName: hibob-stage-dev-new
-  devEnvApprovers:
-  - admins@hibob.com
   environmentGitOwner: hibobio
   gitKind: github
   gitName: github
@@ -34,6 +32,7 @@ environments:
       enabled: false
       production: false
   key: staging
+  namespace: staging
   repository: environment-hibob-staging
 - ingress:
     domain: hibob.com
@@ -45,6 +44,7 @@ environments:
       production: false
   key: production
   remoteCluster: true
+  namespace: production
   repository: environment-hibob-production
 gitops: true
 ingress:
@@ -73,9 +73,7 @@ storage:
     url: s3://hibob-jenkinsx/repository
 terraform: true
 vault: {}
-velero:
-  schedule: ""
-  ttl: ""
+velero: {}
 versionStream:
   ref: v1.0.330
   url: https://github.com/jenkins-x/jenkins-x-versions.git
