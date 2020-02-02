@@ -4,6 +4,9 @@ autoUpdate:
 bootConfigURL: https://github.com/hibobio/environment-hibob-stage-dev-new-dev
 cluster:
   clusterName: hibob-stage-dev-new
+  devEnvApprovers:
+  - iftachsc@cloudzone.io
+  - admins@hibob.com
   environmentGitOwner: hibobio
   gitKind: github
   gitName: github
@@ -75,6 +78,6 @@ velero:
   schedule: ""
   ttl: ""
 versionStream:
-  ref: 3070f565c1ba87a9613e69bdffcaf464b0c7f93e
+  ref: v1.0.334
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: jenkins
