@@ -71,8 +71,10 @@ storage:
     url: s3://hibob-jenkinsx/repository
 terraform: true
 vault: {}
-velero: {}
+velero:
+  schedule: ""
+  ttl: ""
 versionStream:
-  ref: v1.0.330
+  ref: 3070f565c1ba87a9613e69bdffcaf464b0c7f93e
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: jenkins
