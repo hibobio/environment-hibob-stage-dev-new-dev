@@ -32,7 +32,6 @@ environments:
       enabled: false
       production: false
   key: staging
-  namespace: staging
   repository: environment-hibob-staging
 - ingress:
     domain: hibob.com
@@ -44,7 +43,6 @@ environments:
       production: false
   key: production
   remoteCluster: true
-  namespace: production
   repository: environment-hibob-production
 gitops: true
 ingress:
