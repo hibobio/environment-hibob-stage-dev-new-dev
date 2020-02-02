@@ -4,6 +4,9 @@ autoUpdate:
 bootConfigURL: https://github.com/hibobio/environment-hibob-stage-dev-new-dev
 cluster:
   clusterName: hibob-stage-dev-new
+  devEnvApprovers:
+  - iftachsc@cloudzone.io
+  - admins@hibob.com
   environmentGitOwner: hibobio
   gitKind: github
   gitName: github
@@ -71,7 +74,9 @@ storage:
     url: s3://hibob-jenkinsx/repository
 terraform: true
 vault: {}
-velero: {}
+velero:
+  schedule: ""
+  ttl: ""
 versionStream:
   ref: v1.0.330
   url: https://github.com/jenkins-x/jenkins-x-versions.git
