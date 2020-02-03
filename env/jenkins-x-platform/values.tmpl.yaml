@@ -589,13 +589,13 @@ jenkins:
           Jnlp:
             Image: jenkinsci/jnlp-slave:3.26-1-alpine
             RequestCpu: "100m"
-            RequestMemory: "128Mi"
+            RequestMemory: "512Mi"
             Args: '${computer.jnlpmac} ${computer.name}'
           Scala:
             Image: gcr.io/jenkinsxio/builder-scala:latest
             Privileged: true
             RequestCpu: "1"
-            RequestMemory: "2Gi"
+            RequestMemory: "4Gi"
             LimitCpu: "3500m"
             LimitMemory: "4Gi"
             # You may want to change this to true while testing a new image
