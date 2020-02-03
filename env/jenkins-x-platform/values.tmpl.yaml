@@ -411,7 +411,7 @@ jenkins:
             LimitMemory: "1024Mi"
             Tty: true
           Gradle:
-            Image: gcr.io/jenkinsxio/builder-gradle:2.0.1022-354
+            Image: gcr.io/jenkinsxio/builder-gradle:latest
             Privileged: true
             RequestCpu: "1"
             RequestMemory: "1Gi"
@@ -777,7 +777,7 @@ jenkins:
             LimitMemory: "1024Mi"
             Tty: true
           Gradle:
-            Image: gcr.io/jenkinsxio/builder-gradle:2.0.1022-354
+            Image: gcr.io/jenkinsxio/builder-gradle:latest
             Privileged: true
             RequestCpu: "1"
             RequestMemory: "1Gi"
@@ -828,7 +828,7 @@ jenkins:
             LimitMemory: "1024Mi"
             Tty: true
           Gradle:
-            Image: gcr.io/jenkinsxio/builder-gradle:2.0.1022-354
+            Image: gcr.io/jenkinsxio/builder-gradle:latest
             Privileged: true
             RequestCpu: "1"
             RequestMemory: "1Gi"
@@ -879,7 +879,7 @@ jenkins:
             LimitMemory: "1024Mi"
             Tty: true
           Gradle:
-            Image: gcr.io/jenkinsxio/builder-gradle:2.0.1022-354
+            Image: gcr.io/jenkinsxio/builder-gradle:latest
             Privileged: true
             RequestCpu: "1"
             RequestMemory: "1Gi"
@@ -930,7 +930,7 @@ jenkins:
             LimitMemory: "1024Mi"
             Tty: true
           Gradle:
-            Image: gcr.io/jenkinsxio/builder-gradle:2.0.1022-354
+            Image: gcr.io/jenkinsxio/builder-gradle:latest
             Privileged: true
             RequestCpu: "1"
             RequestMemory: "1Gi"
@@ -974,7 +974,7 @@ jenkins:
             RequestMemory: "128Mi"
             Args: '${computer.jnlpmac} ${computer.name}'
           Base:
-            Image: gcr.io/jenkinsxio/builder-base:0.0.76
+            Image: gcr.io/jenkinsxio/builder-base:latest
             Privileged: true
             RequestCpu: "400m"
             RequestMemory: "400Mi"
