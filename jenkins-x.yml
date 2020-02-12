@@ -43,13 +43,13 @@ pipelineConfig:
         - name: DEPLOY_NAMESPACE
           value: jx
         - name: GIT_AUTHOR_NAME
-          value: admins@hibob.com
+          value: hibob-jx
         - name: GIT_COMMITTER_NAME
-          value: admins@hibob.com
+          value: hibob-jx
         - name: GIT_AUTHOR_EMAIL
-          value: admins@hibob.com
+          value: paz.talshachar@hibob.io
         - name: GIT_COMMITTER_EMAIL
-          value: admins@hibob.com
+          value: paz.talshachar@hibob.io
         stages:
         - name: release
           options:

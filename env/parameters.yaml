@@ -3,8 +3,8 @@ adminUser:
   username: admin
 enableDocker: false
 pipelineUser:
-  email: admins@hibob.com
+  email: paz.talshachar@hibob.io
   token: local:hibob-stage-dev-new/pipelineUser:token
-  username: admins@hibob.com
+  username: hibob-jx
 prow:
   hmacToken: local:hibob-stage-dev-new/prow:hmacToken
