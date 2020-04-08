@@ -59,7 +59,7 @@ ingress:
     enabled: false
     production: false
 kaniko: true
-repository: nexus
+repository: bucketrepo
 secretStorage: local
 storage:
   backup:
@@ -80,6 +80,6 @@ velero:
   schedule: ""
   ttl: ""
 versionStream:
-  ref: v1.0.334
+  ref: v1.0.414
   url: https://github.com/jenkins-x/jenkins-x-versions.git
-webhook: jenkins
+webhook: lighthouse
