@@ -63,17 +63,17 @@ repository: bucketrepo
 secretStorage: local
 storage:
   backup:
-    enabled: true
+    enabled: false
     url: s3://hibob-jenkinsx/jenkinsx-backup
   logs:
     enabled: true
-    url: s3://hibob-jenkinsx/logs
+    url: s3://jenkinsx-logs
   reports:
-    enabled: true
+    enabled: false
     url: s3://hibob-jenkinsx/reports
   repository:
     enabled: true
-    url: s3://hibob-jenkinsx/repository
+    url: s3://jenkinsx-charts
 terraform: true
 vault: {}
 velero:
