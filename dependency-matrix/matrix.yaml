@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: hibobio
+  repo: notifications
+  url: https://github.com/hibobio/notifications.git
+  version: ""
+  versionURL: ""
