@@ -17,3 +17,9 @@ dependencies:
   url: https://github.com/hibobio/docs.git
   version: ""
   versionURL: ""
+- host: github.com
+  owner: hibobio
+  repo: social
+  url: https://github.com/hibobio/social.git
+  version: ""
+  versionURL: ""
