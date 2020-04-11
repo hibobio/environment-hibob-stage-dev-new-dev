@@ -1,0 +1,29 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  annotations:
+    jenkins.io/last-build-number-for-master: "5"
+    jenkins.io/last-build-number-for-pr-237: "1"
+    jenkins.io/last-build-number-for-pr-238: "2"
+    jenkins.io/last-build-number-for-pr-250: "1"
+    jenkins.io/last-build-number-for-pr-251: "1"
+    jenkins.io/last-build-number-for-pr-252: "1"
+    jenkins.io/last-build-number-for-pr-253: "1"
+  creationTimestamp: null
+  labels:
+    owner: hibobio
+    provider: github
+    repository: social
+  name: hibobio-social
+spec:
+  description: Imported application for hibobio/social
+  httpCloneURL: https://github.com/hibobio/social.git
+  org: hibobio
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: social
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/hibobio/social.git
