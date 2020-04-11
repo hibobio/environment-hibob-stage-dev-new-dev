@@ -1,0 +1,73 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  annotations:
+    jenkins.io/last-build-number-for-master: "46"
+    jenkins.io/last-build-number-for-pr-944: "1"
+    jenkins.io/last-build-number-for-pr-950: "1"
+    jenkins.io/last-build-number-for-pr-951: "3"
+    jenkins.io/last-build-number-for-pr-952: "1"
+    jenkins.io/last-build-number-for-pr-953: "7"
+    jenkins.io/last-build-number-for-pr-954: "2"
+    jenkins.io/last-build-number-for-pr-955: "5"
+    jenkins.io/last-build-number-for-pr-956: "4"
+    jenkins.io/last-build-number-for-pr-957: "5"
+    jenkins.io/last-build-number-for-pr-958: "6"
+    jenkins.io/last-build-number-for-pr-959: "1"
+    jenkins.io/last-build-number-for-pr-960: "1"
+    jenkins.io/last-build-number-for-pr-961: "5"
+    jenkins.io/last-build-number-for-pr-962: "3"
+    jenkins.io/last-build-number-for-pr-963: "3"
+    jenkins.io/last-build-number-for-pr-964: "3"
+    jenkins.io/last-build-number-for-pr-965: "6"
+    jenkins.io/last-build-number-for-pr-966: "4"
+    jenkins.io/last-build-number-for-pr-967: "21"
+    jenkins.io/last-build-number-for-pr-968: "3"
+    jenkins.io/last-build-number-for-pr-969: "5"
+    jenkins.io/last-build-number-for-pr-970: "1"
+    jenkins.io/last-build-number-for-pr-971: "1"
+    jenkins.io/last-build-number-for-pr-972: "1"
+    jenkins.io/last-build-number-for-pr-973: "2"
+    jenkins.io/last-build-number-for-pr-974: "1"
+    jenkins.io/last-build-number-for-pr-975: "1"
+    jenkins.io/last-build-number-for-pr-976: "1"
+    jenkins.io/last-build-number-for-pr-977: "1"
+    jenkins.io/last-build-number-for-pr-978: "1"
+    jenkins.io/last-build-number-for-pr-979: "2"
+    jenkins.io/last-build-number-for-pr-980: "10"
+    jenkins.io/last-build-number-for-pr-981: "1"
+    jenkins.io/last-build-number-for-pr-982: "1"
+    jenkins.io/last-build-number-for-pr-983: "1"
+    jenkins.io/last-build-number-for-pr-984: "2"
+    jenkins.io/last-build-number-for-pr-985: "1"
+    jenkins.io/last-build-number-for-pr-986: "1"
+    jenkins.io/last-build-number-for-pr-987: "1"
+    jenkins.io/last-build-number-for-pr-988: "1"
+    jenkins.io/last-build-number-for-pr-989: "1"
+    jenkins.io/last-build-number-for-pr-990: "5"
+    jenkins.io/last-build-number-for-pr-991: "1"
+    jenkins.io/last-build-number-for-pr-992: "4"
+    jenkins.io/last-build-number-for-pr-993: "1"
+    jenkins.io/last-build-number-for-pr-994: "9"
+    jenkins.io/last-build-number-for-pr-995: "2"
+    jenkins.io/last-build-number-for-pr-996: "7"
+    jenkins.io/last-build-number-for-pr-997: "6"
+    jenkins.io/last-build-number-for-pr-998: "1"
+  creationTimestamp: null
+  labels:
+    owner: hibobio
+    provider: github
+    repository: docs
+  name: hibobio-docs
+spec:
+  description: Imported application for hibobio/docs
+  httpCloneURL: https://github.com/hibobio/docs.git
+  org: hibobio
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: docs
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/hibobio/docs.git
