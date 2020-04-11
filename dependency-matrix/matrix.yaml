@@ -11,3 +11,9 @@ dependencies:
   url: https://github.com/hibobio/goals.git
   version: ""
   versionURL: ""
+- host: github.com
+  owner: hibobio
+  repo: docs
+  url: https://github.com/hibobio/docs.git
+  version: ""
+  versionURL: ""
