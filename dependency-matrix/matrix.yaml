@@ -29,3 +29,9 @@ dependencies:
   url: https://github.com/hibobio/mapping.git
   version: ""
   versionURL: ""
+- host: github.com
+  owner: hibobio
+  repo: surveys
+  url: https://github.com/hibobio/surveys.git
+  version: ""
+  versionURL: ""
