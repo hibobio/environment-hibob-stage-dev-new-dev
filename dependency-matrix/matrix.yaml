@@ -23,3 +23,9 @@ dependencies:
   url: https://github.com/hibobio/social.git
   version: ""
   versionURL: ""
+- host: github.com
+  owner: hibobio
+  repo: mapping
+  url: https://github.com/hibobio/mapping.git
+  version: ""
+  versionURL: ""
