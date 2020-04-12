@@ -1,0 +1,42 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  annotations:
+    jenkins.io/last-build-number-for-master: "15"
+    jenkins.io/last-build-number-for-pr-1731: "1"
+    jenkins.io/last-build-number-for-pr-1732: "2"
+    jenkins.io/last-build-number-for-pr-1733: "1"
+    jenkins.io/last-build-number-for-pr-1734: "1"
+    jenkins.io/last-build-number-for-pr-1735: "5"
+    jenkins.io/last-build-number-for-pr-1736: "1"
+    jenkins.io/last-build-number-for-pr-1737: "5"
+    jenkins.io/last-build-number-for-pr-1738: "1"
+    jenkins.io/last-build-number-for-pr-1739: "5"
+    jenkins.io/last-build-number-for-pr-1740: "3"
+    jenkins.io/last-build-number-for-pr-1741: "3"
+    jenkins.io/last-build-number-for-pr-1742: "6"
+    jenkins.io/last-build-number-for-pr-1743: "2"
+    jenkins.io/last-build-number-for-pr-1744: "1"
+    jenkins.io/last-build-number-for-pr-1745: "5"
+    jenkins.io/last-build-number-for-pr-1746: "1"
+    jenkins.io/last-build-number-for-pr-1747: "1"
+    jenkins.io/last-build-number-for-pr-1748: "1"
+    jenkins.io/last-build-number-for-pr-1749: "1"
+  creationTimestamp: null
+  labels:
+    owner: hibobio
+    provider: github
+    repository: surveys
+  name: hibobio-surveys
+spec:
+  description: Imported application for hibobio/surveys
+  httpCloneURL: https://github.com/hibobio/surveys.git
+  org: hibobio
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: surveys
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/hibobio/surveys.git
