@@ -3,7 +3,6 @@ autoUpdate:
   schedule: ""
 bootConfigURL: https://github.com/hibobio/environment-hibob-stage-dev-new-dev
 cluster:
-  chartRepository: http://bucketrepo/bucketrepo/charts/
   clusterName: hibob-stage-dev-new
   devEnvApprovers:
   - pazt
