@@ -3,6 +3,7 @@ autoUpdate:
   schedule: ""
 bootConfigURL: https://github.com/hibobio/environment-hibob-stage-dev-new-dev
 cluster:
+  chartRepository: http://jenkins-x-chartmuseum:8080
   clusterName: hibob-stage-dev-new
   devEnvApprovers:
   - pazt
