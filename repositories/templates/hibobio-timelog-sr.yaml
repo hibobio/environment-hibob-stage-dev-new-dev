@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: hibobio
+    provider: github
+    repository: timelog
+  name: hibobio-timelog
+spec:
+  description: Imported application for hibobio/timelog
+  httpCloneURL: https://github.com/hibobio/timelog.git
+  org: hibobio
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: timelog
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/hibobio/timelog.git
