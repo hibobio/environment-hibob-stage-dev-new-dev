@@ -1,2 +1,4 @@
 jxui:
   enableTLS: false
+  service:
+    type: LoadBalancer

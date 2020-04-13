@@ -3,7 +3,6 @@ autoUpdate:
   schedule: ""
 bootConfigURL: https://github.com/hibobio/environment-hibob-stage-dev-new-dev
 cluster:
-  chartRepository: http://bucketrepo/bucketrepo/charts/
   clusterName: hibob-stage-dev-new
   devEnvApprovers:
   - pazt
@@ -59,21 +58,21 @@ ingress:
     enabled: false
     production: false
 kaniko: true
-repository: bucketrepo
+repository: nexus
 secretStorage: local
 storage:
   backup:
-    enabled: false
+    enabled: true
     url: s3://hibob-jenkinsx/jenkinsx-backup
   logs:
     enabled: true
-    url: s3://jenkinsx-logs
+    url: s3://jenkinsx-logs?region=eu-west-1
   reports:
     enabled: false
     url: s3://hibob-jenkinsx/reports
   repository:
-    enabled: true
-    url: s3://jenkinsx-charts
+    enabled: false
+    url: s3://jenkinsx-charts?region=eu-west-1
 terraform: true
 vault: {}
 velero:

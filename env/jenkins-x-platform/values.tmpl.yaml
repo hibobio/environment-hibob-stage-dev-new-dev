@@ -19,6 +19,11 @@ chartmuseum:
     secret:
       BASIC_AUTH_USER: "{{ .Parameters.adminUser.username }}"
       BASIC_AUTH_PASS: "{{ .Parameters.adminUser.password }}"
+    open:
+      STORAGE: amazon
+      STORAGE_AMAZON_BUCKET: jenkinsx-charts
+      STORAGE_AMAZON_PREFIX:
+      STORAGE_AMAZON_REGION: eu-west-1
 {{- end }}
 
 nexus:
