@@ -66,7 +66,7 @@ storage:
     url: s3://hibob-jenkinsx/jenkinsx-backup
   logs:
     enabled: true
-    url: s3://jenkinsx-logs?region=eu-west-1
+    url: s3://jenkinsx-logs
   reports:
     enabled: false
     url: s3://hibob-jenkinsx/reports
