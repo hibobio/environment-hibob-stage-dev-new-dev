@@ -59,20 +59,19 @@ ingress:
     enabled: false
     production: false
 kaniko: true
-repository: bucketrepo
 secretStorage: local
 storage:
   backup:
-    enabled: false
+    enabled: true
     url: s3://hibob-jenkinsx/jenkinsx-backup
   logs:
     enabled: true
-    url: s3://jenkinsx-logs
+    url: s3://jenkinsx-logs?region=eu-west-1
   reports:
     enabled: false
     url: s3://hibob-jenkinsx/reports
   repository:
-    enabled: true
+    enabled: false
     url: s3://jenkinsx-charts?region=eu-west-1
 terraform: true
 vault: {}
