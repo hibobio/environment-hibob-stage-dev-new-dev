@@ -4,6 +4,7 @@ external-dns:
     tag: 0.5.16-debian-9-r8
   sources:
   - ingress
+  - service
   provider: aws
   aws:
     region: eu-west-1
