@@ -24,4 +24,3 @@ See [how to download jxl](https://jenkins-x.io/docs/labs/jxl/)
 To raise an issue see the [Jenkins X Labs issue tracker](https://github.com/jenkins-x-labs/issues/issues)
 
 
-
