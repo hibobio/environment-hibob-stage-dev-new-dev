@@ -5,3 +5,10 @@ jxui:
     annotations:
       service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
       service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: "3600"
+      external-dns.alpha.kubernetes.io/hostname: jx-ui.hibob.com
+      service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:eu-west-1:242867168342:certificate/549faf22-0bc6-45ee-a075-b193eda45555
+    loadBalancerSourceRanges:
+    - 79.176.81.32/32
+    - 85.250.226.47/32
+    - 79.179.131.1/32
+    - 82.166.70.126/32
