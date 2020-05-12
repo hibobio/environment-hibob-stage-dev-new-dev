@@ -1,0 +1,24 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  annotations:
+    jenkins.io/last-build-number-for-master: "13"
+    jenkins.io/last-build-number-for-pr-7: "34"
+  creationTimestamp: null
+  labels:
+    owner: hibobio
+    provider: github
+    repository: notifications
+  name: hibobio-notifications
+spec:
+  description: Imported application for hibobio/notifications
+  httpCloneURL: https://github.com/hibobio/notifications.git
+  org: hibobio
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: notifications
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/hibobio/notifications.git

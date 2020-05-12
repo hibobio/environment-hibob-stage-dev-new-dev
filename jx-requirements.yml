@@ -4,6 +4,10 @@ autoUpdate:
 bootConfigURL: https://github.com/hibobio/environment-hibob-stage-dev-new-dev
 cluster:
   clusterName: hibob-stage-dev-new
+  devEnvApprovers:
+  - pazt
+  - hibob-jx
+  - iftachsc
   environmentGitOwner: hibobio
   gitKind: github
   gitName: github
@@ -26,7 +30,7 @@ environments:
 - ingress:
     domain: hibob.com
     externalDNS: true
-    namespaceSubDomain: ""
+    namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
@@ -62,19 +66,19 @@ storage:
     url: s3://hibob-jenkinsx/jenkinsx-backup
   logs:
     enabled: true
-    url: s3://hibob-jenkinsx/logs
+    url: s3://jenkinsx-logs
   reports:
-    enabled: true
+    enabled: false
     url: s3://hibob-jenkinsx/reports
   repository:
-    enabled: true
-    url: s3://hibob-jenkinsx/repository
+    enabled: false
+    url: s3://jenkinsx-charts?region=eu-west-1
 terraform: true
 vault: {}
 velero:
   schedule: ""
   ttl: ""
 versionStream:
-  ref: v1.0.334
+  ref: v1.0.448
   url: https://github.com/jenkins-x/jenkins-x-versions.git
-webhook: jenkins
+webhook: lighthouse

@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: hibobio
+    provider: github
+    repository: goals
+  name: hibobio-goals
+spec:
+  description: Imported application for hibobio/goals
+  httpCloneURL: https://github.com/hibobio/goals.git
+  org: hibobio
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: goals
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/hibobio/goals.git

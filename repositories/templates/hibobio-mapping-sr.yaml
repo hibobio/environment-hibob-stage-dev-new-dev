@@ -1,0 +1,23 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  annotations:
+    jenkins.io/last-build-number-for-master: "1"
+  creationTimestamp: null
+  labels:
+    owner: hibobio
+    provider: github
+    repository: mapping
+  name: hibobio-mapping
+spec:
+  description: Imported application for hibobio/mapping
+  httpCloneURL: https://github.com/hibobio/mapping.git
+  org: hibobio
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: mapping
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/hibobio/mapping.git
