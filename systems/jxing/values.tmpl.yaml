@@ -1,8 +1,7 @@
 nginx-ingress:
   controller:
-    config:
-      redirect-to-https: "true"
-      use-forwarded-headers: "true"
+    image:
+      repository: gcr.io/jenkinsxio/nginx-ingress-controller
     replicaCount: 3
     extraArgs:
       publish-service: kube-system/jxing-nginx-ingress-controller
