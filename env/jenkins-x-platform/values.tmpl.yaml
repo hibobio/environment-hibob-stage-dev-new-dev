@@ -1268,6 +1268,10 @@ controllercommitstatus:
     enabled: false
 
 controllerrole:
+  role:
+    additionalNamespaces:
+    - jx-staging
+    - jx-production
   clusterrole:
     enabled: false
 
