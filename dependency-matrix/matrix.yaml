@@ -41,3 +41,9 @@ dependencies:
   url: https://github.com/hibobio/timelog.git
   version: ""
   versionURL: ""
+- host: github.com
+  owner: hibobio
+  repo: hibob-web-client
+  url: https://github.com/hibobio/hibob-web-client.git
+  version: ""
+  versionURL: ""
