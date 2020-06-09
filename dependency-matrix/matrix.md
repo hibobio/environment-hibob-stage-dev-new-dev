@@ -9,3 +9,4 @@ Dependency | Sources | Version | Mismatched versions
 [hibobio/mapping](https://github.com/hibobio/mapping.git) |  | []() | 
 [hibobio/surveys](https://github.com/hibobio/surveys.git) |  | []() | 
 [hibobio/timelog](https://github.com/hibobio/timelog.git) |  | []() | 
+[hibobio/hibob-web-client](https://github.com/hibobio/hibob-web-client.git) |  | []() | 

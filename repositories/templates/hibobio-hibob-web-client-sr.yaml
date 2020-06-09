@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: hibobio
+    provider: github
+    repository: hibob-web-client
+  name: hibobio-hibob-web-client
+spec:
+  description: Imported application for hibobio/hibob-web-client
+  httpCloneURL: https://github.com/hibobio/hibob-web-client.git
+  org: hibobio
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: hibob-web-client
+  scheduler:
+    kind: ""
+    name: ""
+  url: git@github.com:hibobio/hibob-web-client
