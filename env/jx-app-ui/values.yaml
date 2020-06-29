@@ -1,5 +1,5 @@
 jxui:
-  enableTLS: false
+  enableTLS: true
   service:
     type: LoadBalancer
     annotations:
