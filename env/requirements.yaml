@@ -21,3 +21,6 @@ dependencies:
 - name: jx-app-ui
   repository: http://chartmuseum.jenkins-x.io
   version: 0.1.138
+- name: slack
+  repository: https://jenkinsxio-labs.storage.googleapis.com/charts
+  version: 0.0.18
