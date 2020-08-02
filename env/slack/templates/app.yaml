@@ -1,0 +1,12 @@
+apiVersion: jenkins.io/v1
+kind: App
+metadata:
+  annotations:
+    jenkins.io/chart-description: A Slack App for Jenkins X
+    jenkins.io/chart-repository: https://jenkinsxio-labs.storage.googleapis.com/charts
+  creationTimestamp: null
+  labels:
+    jenkins.io/app-name: slack
+    jenkins.io/app-version: 0.0.18
+  name: slack
+spec: {}

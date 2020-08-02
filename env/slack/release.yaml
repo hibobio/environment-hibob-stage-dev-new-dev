@@ -1,0 +1,31 @@
+apiVersion: jenkins.io/v1
+kind: Release
+metadata:
+  creationTimestamp: "2020-03-26T16:05:14Z"
+  deletionTimestamp: null
+  name: '{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}'
+spec:
+  commits:
+  - author: {}
+    branch: master
+    committer: {}
+    message: |
+      fix: missing role permissions
+
+      - adding missing read permissions on environments, which resulted in the following error
+
+      ```
+      WARNING: error loading TeamSettings to determine if in GitHub app mode: failed to setup the dev environment for namespace 'jx': environments.jenkins.io is forbidden: User "system:serviceaccount:jx:jenkins-x-slack" cannot create resource "environments" in API group "jenkins.io" in the namespace "jx"
+      ```
+
+      - adding missing read permissions on configmaps/serviceaccounts/vault, to be able to read git auth config - fixes https://github.com/jenkins-x-labs/slack/issues/24
+
+      - move the role rules in the chart values, to allow customization of the rules without requiring updates of the chart
+    sha: adfd8d0b2f15d18b2820444bec85c80816693a85
+  gitCloneUrl: https://github.com/jenkins-x-labs/slack.git
+  gitHttpUrl: https://github.com/jenkins-x-labs/slack
+  gitOwner: jenkins-x-labs
+  gitRepository: slack
+  name: '{{ .Chart.Name }}'
+  version: 0.0.18
+status: {}
