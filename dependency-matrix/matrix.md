@@ -10,3 +10,4 @@ Dependency | Sources | Version | Mismatched versions
 [hibobio/surveys](https://github.com/hibobio/surveys.git) |  | []() | 
 [hibobio/timelog](https://github.com/hibobio/timelog.git) |  | []() | 
 [hibobio/hibob-web-client](https://github.com/hibobio/hibob-web-client.git) |  | []() | 
+[hibobio/payroll](https://github.com/hibobio/payroll.git) |  | []() | 
