@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: hibobio
+    provider: github
+    repository: payroll
+  name: hibobio-payroll
+spec:
+  description: Imported application for hibobio/payroll
+  httpCloneURL: https://github.com/hibobio/payroll.git
+  org: hibobio
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: payroll
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/hibobio/payroll.git
