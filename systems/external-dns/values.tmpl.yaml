@@ -5,6 +5,7 @@ external-dns:
   sources:
   - ingress
   - service
+{{- if eq .Requirements.cluster.provider "eks"}}
   provider: aws
   aws:
     region: {{ .Requirements.cluster.region}}
