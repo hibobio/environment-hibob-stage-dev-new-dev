@@ -7,10 +7,22 @@ external-dns:
   - service
   provider: aws
   aws:
-    region: eu-west-1
-    assumeRoleArn: arn:aws:iam::242867168342:role/k8s-external-dns
-    preferCNAME: true
-  txtPrefix: "a-"
+    region: {{ .Requirements.cluster.region}}
+  securityContext:
+    fsGroup: 65534
+{{- else if eq .Requirements.cluster.provider "gke"}}
+  provider: google
+  google:
+    serviceAccountSecret: external-dns-gcp-sa
+ {{- if hasKey .Requirements.cluster "project" }}
+    project: "{{ .Requirements.cluster.project }}"
+ {{ end }}
+{{- else if eq .Requirements.cluster.provider "aks"}}
+  provider: azure
+  azure:
+    secretName: azure-external-dns-secret
+{{- end}}
+
   rbac:
     create: true
     serviceAccountName: external-dns
