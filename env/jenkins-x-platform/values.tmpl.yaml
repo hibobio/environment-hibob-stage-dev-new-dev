@@ -1291,7 +1291,8 @@ gcactivities:
     - "gc"
     - "activities"
     - "--batch-mode"
-    - "--pr-history-limit=30"
+    - "--pipelinerun-age=24h0m0s"
+    - "--pr-history-limit=300"
   cronjob:
     enabled: true
     schedule: "0/30 * * * *"
